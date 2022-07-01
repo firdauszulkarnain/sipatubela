@@ -111,7 +111,7 @@
                                         <li class="nav-item">
                                             <a href="<?= base_url() ?>pengajuan/lampiran" class="nav-link <?= $this->uri->segment(1) == 'pengajuan'  && $this->uri->segment(2) == 'lampiran' ? "active" : "" ?>">
                                                 <i class="far fa-circle nav-icon"></i>
-                                                <p>Pengajuan</p>
+                                                <p>Lampiran</p>
                                             </a>
                                         </li>
                                     </ul>
