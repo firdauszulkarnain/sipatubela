@@ -2,7 +2,6 @@
     <div class="container-fluid">
         <div class="d-sm-flex align-items-center justify-content-between ">
             <h1 class="h3 mb-0 text-gray-800"><?= $title ?></h1>
-            <a class="btn btn-sm btn-success px-4 py-2" href="<?= base_url() ?>produk/tambah_produk"><i class="fas fa-fw fa-plus"></i> Tambah Produk</a>
         </div>
     </div>
 </section>
@@ -30,8 +29,8 @@
                                     <td></td>
                                     <td class="text-capitalize"><?= $item['nama_lengkap'] ?></td>
                                     <td><?= $item['nip'] ?></td>
-                                    <td><?= 'email' ?></td>
-                                    <td><?= 'username' ?></td>
+                                    <td><?= 'yuda@gmail.com' ?></td>
+                                    <td><?= 'yuda' ?></td>
                                     <td>
                                         <!-- Button Edit -->
                                         <a href="<?= base_url() ?>pengguna/update_pengguna/" class="btn btn-sm btn-info text-light"><i class="fas fa-fw fa-edit"></i></a>

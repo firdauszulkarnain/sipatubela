@@ -16,6 +16,7 @@ class Pengajuan_Model extends CI_Model
             'alamat' =>  htmlspecialchars(trim($this->input->post('alamat'))),
             'program_studi' =>  htmlspecialchars(trim($this->input->post('program_studi'))),
             'instusi' =>  htmlspecialchars(trim($this->input->post('instusi'))),
+            'user_id' => 1
         ];
 
         $this->db->insert('data_pribadi', $data);

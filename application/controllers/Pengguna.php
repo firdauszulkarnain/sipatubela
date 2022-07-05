@@ -9,4 +9,11 @@ class Pengguna extends CI_Controller
         $data['pengguna'] = $this->db->get('data_pribadi')->result_array();
         $this->template->load('template/admin_template', 'admin/pengguna', $data);
     }
+
+    public function pengajuan()
+    {
+        $data['title'] = 'Data Pengajuan';
+        $data['pengajuan'] = $this->db->get('data_pribadi')->result_array();
+        $this->template->load('template/admin_template', 'admin/pengguna', $data);
+    }
 }
