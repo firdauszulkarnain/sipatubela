@@ -5,8 +5,10 @@ class Pengajuan extends CI_Controller
 {
     public function data()
     {
+        $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
+        $idUser = $data['user']['id_user'];
         $data['title'] = 'Data Pribadi Pengajuan';
-        $data['pribadi'] = $this->db->get_where('data_pribadi', ['user_id' => 1])->row_array();
+        $data['pribadi'] = $this->db->get_where('data_pribadi', ['user_id' => $idUser])->row_array();
 
         // FORM VALIDATION
         $this->form_validation->set_rules('nama_lengkap', 'Nama Lengkap', 'required|trim', ['required' => 'Nama Produk Tidak Boleh Kosong']);
@@ -28,7 +30,7 @@ class Pengajuan extends CI_Controller
         if ($this->form_validation->run() == false) {
             $this->template->load('template/user_template', 'user/data_pribadi', $data);
         } else {
-            $this->Pengajuan_Model->tambahDataPribadi();
+            $this->Pengajuan_Model->tambahDataPribadi($idUser);
             $this->session->set_flashdata('pesan', 'Berhasil Simpan Data Pribadi!');
             redirect('pengajuan/data');
         }
@@ -36,6 +38,7 @@ class Pengajuan extends CI_Controller
 
     public function lampiran()
     {
+        $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
         $data['title'] = 'Lampiran Data Pengajuan';
         $this->template->load('template/user_template', 'user/lampiran', $data);
     }

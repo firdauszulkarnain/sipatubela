@@ -77,7 +77,7 @@
                         <img src="<?= base_url() ?>assets/img/profile/Default.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="<?= base_url() ?>admin/profile" class="d-block text-capitalize <?= $this->uri->segment(2) == 'profile' ? "text-light" : "" ?>"">Administrator</a>
+                        <a href="<?= base_url() ?>user/profile" class="d-block text-capitalize <?= $this->uri->segment(2) == 'profile' ? "text-light" : "" ?>""><?= $user['username'] ?></a>
                     </div>
                 </div>
 

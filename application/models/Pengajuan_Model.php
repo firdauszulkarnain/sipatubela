@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Pengajuan_Model extends CI_Model
 {
-    public function tambahDataPribadi()
+    public function tambahDataPribadi($idUser)
     {
         $data = [
             'nama_lengkap' => htmlspecialchars(trim($this->input->post('nama_lengkap'))),
@@ -16,7 +16,7 @@ class Pengajuan_Model extends CI_Model
             'alamat' =>  htmlspecialchars(trim($this->input->post('alamat'))),
             'program_studi' =>  htmlspecialchars(trim($this->input->post('program_studi'))),
             'instusi' =>  htmlspecialchars(trim($this->input->post('instusi'))),
-            'user_id' => 1
+            'user_id' => $idUser
         ];
 
         $this->db->insert('data_pribadi', $data);
