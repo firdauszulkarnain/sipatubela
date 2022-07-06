@@ -23,4 +23,11 @@ class User extends CI_Controller
         $data['title'] = 'Dashboard';
         $this->template->load('template/user_template', 'user/dashboard', $data);
     }
+
+    public function profile()
+    {
+        $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
+        $data['title'] = 'User Profile';
+        $this->template->load('template/user_template', 'user/profile', $data);
+    }
 }
