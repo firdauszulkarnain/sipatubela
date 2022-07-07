@@ -21,4 +21,24 @@ class Pengajuan_Model extends CI_Model
 
         $this->db->insert('data_pribadi', $data);
     }
+
+    public function tambahLampiran($sk_cpns, $sk_pns)
+    {
+        $data = [
+            'user_id' => 0,
+            'sk_cpns' => $sk_cpns,
+            'sk_pns' => $sk_pns,
+            'sk_pangkat_terakhir' => 'sk_pangkat_terakhir',
+            'skp_dua_tahun' => 'skp_dua_tahun',
+            'sk_perjanjian' => 'sk_perjanjian',
+            'sk_jamin_biaya' => 'sk_jamin_biaya',
+            'st_izin_kepala' => 'st_izin_kepala',
+            'st_rekomendasi' => 'st_rekomendasi',
+            'jadwal_kuliah' => 'jadwal_kuliah',
+            'st_pernyataan' => 'st_pernyataan',
+
+        ];
+
+        $this->db->insert('pengajuan', $data);
+    }
 }

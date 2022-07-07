@@ -42,4 +42,58 @@ class Pengajuan extends CI_Controller
         $data['title'] = 'Lampiran Data Pengajuan';
         $this->template->load('template/user_template', 'user/lampiran', $data);
     }
+
+    public function proses_pengajuan()
+    {
+        $sk_cpns = $this->sk_cpns;
+        $sk_pns = $this->sk_pns;
+
+
+        $this->Pengajuan_Model->tambahLampiran($sk_cpns, $sk_pns);
+        $this->session->set_flashdata('pesan', 'Tambah Data Surat');
+        redirect('pengajuan/lampiran');
+    }
+
+
+    public function sk_cpns()
+    {
+        $sk_cpns = $_FILES['sk_cpns']['name'];
+        if ($sk_cpns) {
+            $config['allowed_types'] = 'pdf|doc|docx';
+            $config['max_size']     = '2048';
+            $config['upload_path'] = './assets/file/sk_cpns';
+            $this->load->library('upload', $config);
+
+            if (!$this->upload->do_upload('sk_cpns')) {
+                $this->session->set_flashdata('file_error', 'Input File Hanya Menerima Dokumen');
+                redirect('pengajuan/lampiran');
+            } else {
+                $sk_cpns = $this->upload->data('file_name');
+            }
+        } else {
+            $this->session->set_flashdata('file_error', 'Input FIle Harus Diisi');
+            redirect('pengajuan/lampiran');
+        }
+    }
+
+    public function sk_pns()
+    {
+        $sk_pns = $_FILES['sk_pns']['name'];
+        if ($sk_pns) {
+            $config['allowed_types'] = 'pdf|doc|docx';
+            $config['max_size']     = '2048';
+            $config['upload_path'] = './assets/file/sk_pns';
+            $this->load->library('upload', $config);
+
+            if (!$this->upload->do_upload('sk_pns')) {
+                $this->session->set_flashdata('file_error', 'Input File Hanya Menerima Dokumen');
+                redirect('pengajuan/lampiran');
+            } else {
+                $sk_pns = $this->upload->data('file_name');
+            }
+        } else {
+            $this->session->set_flashdata('file_error', 'Input FIle Harus Diisi');
+            redirect('pengajuan/lampiran');
+        }
+    }
 }
