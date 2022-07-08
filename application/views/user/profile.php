@@ -15,14 +15,14 @@
                         <div class="form-group row">
                             <label for="nama_lengkap" class="col-sm-3 col-form-label">Nama Lengkap</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control text-capitalize <?= (form_error('nama_lengkap')) ? 'is-invalid' : '' ?>" id="nama_lengkap" name="nama_lengkap" value="<?= $user['nama_lengkap']  ?>" autocomplete="off">
+                                <input type="text" class="form-control text-capitalize <?= (form_error('nama_lengkap')) ? 'is-invalid' : '' ?>" id="nama_lengkap" name="nama_lengkap" value="<?= $user['nama_user']  ?>" autocomplete="off">
                                 <?= form_error('nama_lengkap', '<small class="form-text text-danger">', '</small>'); ?>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="nip" class="col-sm-3 col-form-label">NIP</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control <?= (form_error('nip')) ? 'is-invalid' : '' ?>" id="nip" name="nip" value="<?= $user['nip']  ?>" autocomplete="off">
+                                <input type="text" class="form-control <?= (form_error('nip')) ? 'is-invalid' : '' ?>" id="nip" name="nip" value="<?= $user['nip_user']  ?>" autocomplete="off">
                                 <?= form_error('nip', '<small class="form-text text-danger">', '</small>'); ?>
                             </div>
                         </div>

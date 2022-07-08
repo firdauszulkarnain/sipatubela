@@ -69,6 +69,7 @@ class Pengajuan_Model extends CI_Model
     public function ambilData()
     {
         $this->db->join('user us', 'us.id_user = pj.user_id');
+        $this->db->join('data_pribadi dp', 'dp.user_id = us.id_user');
         return $this->db->get('pengajuan pj')->result_array();
     }
 }
