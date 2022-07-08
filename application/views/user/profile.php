@@ -29,7 +29,7 @@
                         <div class="form-group row">
                             <label for="ttl" class="col-sm-3 col-form-label">Tempat Tanggal Lahir</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control <?= (form_error('ttl')) ? 'is-invalid' : '' ?>" id="ttl" name="ttl" value="<?= $user['TTL']  ?>" autocomplete="off">
+                                <input type="text" class="form-control <?= (form_error('ttl')) ? 'is-invalid' : '' ?>" id="ttl" name="ttl" value="<?= $user['ttl']  ?>" autocomplete="off">
                                 <?= form_error('ttl', '<small class="form-text text-danger">', '</small>'); ?>
                             </div>
                         </div>
