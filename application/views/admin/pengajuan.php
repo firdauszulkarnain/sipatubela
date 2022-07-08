@@ -78,7 +78,7 @@
                                     <td></td>
                                     <td class="text-center align-middle">
                                         <!-- Button Detail -->
-                                        <a href="<?= base_url() ?>pengajuan/detail_pengajuan/<?= $item['id_pengajuan'] ?>" class="btn btn-sm btn-success text-light"><i class="fas fa-fw fa-eye"></i> </a>
+                                        <a href="<?= base_url() ?>pengguna/detail_pengajuan/<?= $item['id_pengajuan'] ?>" class="btn btn-sm btn-success text-light"><i class="fas fa-fw fa-eye"></i> </a>
                                     </td>
                                 </tr>
                             <?php endforeach ?>

@@ -6,8 +6,8 @@ class User_Model extends CI_Model
     public function updateProfil($idUser)
     {
         $data = [
-            'nama_user' => htmlspecialchars(trim($this->input->post('nama_user'))),
-            'nip_user' => htmlspecialchars(trim($this->input->post('nip_user'))),
+            'nama_user' => htmlspecialchars(trim($this->input->post('nama_lengkap'))),
+            'nip_user' => htmlspecialchars(trim($this->input->post('nip'))),
             'ttl' => htmlspecialchars(trim($this->input->post('ttl'))),
             'agama' =>  htmlspecialchars(trim($this->input->post('agama'))),
             'jabatan' => htmlspecialchars(trim($this->input->post('jabatan'))),
@@ -23,8 +23,8 @@ class User_Model extends CI_Model
     public function updatePengguna($idUser)
     {
         $data = [
-            'nama_user' => htmlspecialchars(trim($this->input->post('nama_user'))),
-            'nip_user' => htmlspecialchars(trim($this->input->post('nip_user'))),
+            'nama_user' => htmlspecialchars(trim($this->input->post('nama_lengkap'))),
+            'nip_user' => htmlspecialchars(trim($this->input->post('nip'))),
             'email' => htmlspecialchars(trim($this->input->post('email'))),
             'username' =>  htmlspecialchars(trim($this->input->post('username'))),
         ];

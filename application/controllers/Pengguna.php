@@ -29,6 +29,15 @@ class Pengguna extends CI_Controller
         $this->template->load('template/admin_template', 'admin/pengajuan', $data);
     }
 
+    // detail pengajuan
+    public function detail_pengajuan($id_pengajuan)
+    {
+        $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('admin')])->row_array();
+        $data['title'] = 'Detail Pengajuan';
+        $data['pengajuan'] = $this->Pengajuan_Model->detailPengajuan($id_pengajuan);
+        $this->template->load('template/admin_template', 'admin/detail_pengajuan', $data);
+    }
+
     // update pengguna
     public function update_pengguna($idUser)
     {

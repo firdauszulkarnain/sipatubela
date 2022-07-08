@@ -72,4 +72,12 @@ class Pengajuan_Model extends CI_Model
         $this->db->join('data_pribadi dp', 'dp.user_id = us.id_user');
         return $this->db->get('pengajuan pj')->result_array();
     }
+
+    // Ambil Detail Data
+    public function detailPengajuan($id_pengajuan)
+    {
+        $this->db->join('user us', 'us.id_user = pj.user_id');
+        $this->db->join('data_pribadi dp', 'dp.user_id = us.id_user');
+        return $this->db->get_where('pengajuan pj', ['pj.id_pengajuan' => $id_pengajuan])->row_array();
+    }
 }
