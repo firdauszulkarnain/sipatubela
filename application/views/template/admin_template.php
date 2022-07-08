@@ -109,7 +109,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="<?= base_url() ?>pengguna/pengajuan" class="nav-link <?= $this->uri->segment(1) == 'pengguna'  && $this->uri->segment(2) == 'Pengajuan' ? "active" : "" ?>">
+                                            <a href="<?= base_url() ?>pengguna/pengajuan" class="nav-link <?= $this->uri->segment(1) == 'pengguna'  && $this->uri->segment(2) == 'pengajuan' ? "active" : "" ?>">
                                                 <i class="far fa-circle nav-icon"></i>
                                                 <p>Pengajuan</p>
                                             </a>

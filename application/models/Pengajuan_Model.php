@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Pengajuan_Model extends CI_Model
 {
+    // Tambah Data Pribadi
     public function tambahDataPribadi($idUser)
     {
         $data = [
@@ -22,6 +23,7 @@ class Pengajuan_Model extends CI_Model
         $this->db->insert('data_pribadi', $data);
     }
 
+    // Update Data Pribadi
     public function UpdateDataPribadi($idUser)
     {
         $data = [
@@ -42,6 +44,7 @@ class Pengajuan_Model extends CI_Model
         $this->db->update('data_pribadi', $data);
     }
 
+    // Tambah Lampiran
     public function tambahLampiran($sk_cpns, $sk_pns, $sk_pangkat_terakhir, $skp_dua_tahun, $sk_perjanjian, $sk_jamin_biaya, $st_izin_kepala, $st_rekomendasi, $jadwal_kuliah, $st_pernyataan, $id_user)
     {
         $data = [
@@ -60,5 +63,12 @@ class Pengajuan_Model extends CI_Model
         ];
 
         $this->db->insert('pengajuan', $data);
+    }
+
+    // Ambil Data
+    public function ambilData()
+    {
+        $this->db->join('user us', 'us.id_user = pj.user_id');
+        return $this->db->get('pengajuan pj')->result_array();
     }
 }

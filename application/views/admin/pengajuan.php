@@ -16,15 +16,35 @@
                         <thead>
                             <tr class="text-center">
                                 <th width="5%">No</th>
-                                <th>Nama</th>
+                                <th>Nama Lengkap</th>
                                 <th>NIP</th>
-                                <th>Email</th>
-                                <th>Username</th>
+                                <th>File Pengajuan</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach ($pengajuan as $item) : ?>
+                                <tr class="text-center">
+                                    <td></td>
+                                    <td class="text-capitalize"><?= $item['nama_lengkap'] ?></td>
+                                    <td><?= $item['nip'] ?></td>
+                                    <td><?= $item['username'] ?></td>
+                                    <td>Tes</td>
+                                    <td>
+                                        <!-- Button Edit -->
+                                        <a href="<?= base_url() ?>pengguna/update_pengguna/" class="btn btn-sm btn-info text-light"><i class="fas fa-fw fa-edit"></i></a>
+                                        <!-- Button Hapus -->
+                                        <form action="<?= base_url() ?>pengguna/hapus_pengguna" method="POST" class="d-inline">
+                                            <input type="hidden" name="id_user" value="<?= $item['id_user'] ?>">
+                                            <button class="btn btn-sm btn-danger text-light tombol-hapus" type="submit">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </form>
 
+
+                                    </td>
+                                </tr>
+                            <?php endforeach ?>
                         </tbody>
                     </table>
                 </div>
