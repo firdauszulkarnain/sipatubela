@@ -33,7 +33,7 @@
                                     <td><?= $item['email'] ?></td>
                                     <td>
                                         <!-- Button Edit -->
-                                        <a href="<?= base_url() ?>pengguna/update_pengguna/" class="btn btn-sm btn-info text-light"><i class="fas fa-fw fa-edit"></i></a>
+                                        <a href="<?= base_url() ?>pengguna/update_pengguna/<?= $item['id_user'] ?>" class="btn btn-sm btn-info text-light"><i class="fas fa-fw fa-edit"></i></a>
                                         <!-- Button Hapus -->
                                         <form action="<?= base_url() ?>pengguna/hapus_pengguna" method="POST" class="d-inline">
                                             <input type="hidden" name="id_user" value="<?= $item['id_user'] ?>">

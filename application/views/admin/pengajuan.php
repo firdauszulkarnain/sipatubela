@@ -76,18 +76,9 @@
                                         <input type="checkbox" id="st_pernyataan" checked disabled>
                                     </td>
                                     <td></td>
-                                    <td class="text-center">
-                                        <!-- Button Edit -->
-                                        <a href="<?= base_url() ?>pengguna/update_pengguna/" class="btn btn-sm btn-info text-light"><i class="fas fa-fw fa-edit"></i></a>
-                                        <!-- Button Hapus -->
-                                        <form action="<?= base_url() ?>pengguna/hapus_pengguna" method="POST" class="d-inline">
-                                            <input type="hidden" name="id_user" value="<?= $item['id_user'] ?>">
-                                            <button class="btn btn-sm btn-danger text-light tombol-hapus" type="submit">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </button>
-                                        </form>
-
-
+                                    <td class="text-center align-middle">
+                                        <!-- Button Detail -->
+                                        <a href="<?= base_url() ?>pengajuan/detail_pengajuan/<?= $item['id_pengajuan'] ?>" class="btn btn-sm btn-success text-light"><i class="fas fa-fw fa-eye"></i> </a>
                                     </td>
                                 </tr>
                             <?php endforeach ?>

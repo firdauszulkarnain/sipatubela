@@ -51,7 +51,7 @@
                             <div class="form-group row">
                                 <label for="tanggal_lahir" class="col-sm-3 col-form-label">Tanggal Lahir</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control <?= (form_error('tanggal_lahir')) ? 'is-invalid' : '' ?>" id="tanggal_lahir" name="tanggal_lahir" value="<?= set_value('tanggal_lahir');   ?>" autocomplete="off">
+                                    <input type="date" class="form-control <?= (form_error('tanggal_lahir')) ? 'is-invalid' : '' ?>" id="tanggal_lahir" name="tanggal_lahir" value="<?= set_value('tanggal_lahir');   ?>" autocomplete="off">
                                     <?= form_error('tanggal_lahir', '<small class="form-text text-danger">', '</small>'); ?>
                                 </div>
                             </div>
@@ -127,7 +127,7 @@
                             <div class="form-group row">
                                 <label for="tanggal_lahir" class="col-sm-3 col-form-label">Tanggal Lahir</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control <?= (form_error('tanggal_lahir')) ? 'is-invalid' : '' ?>" id="tanggal_lahir" name="tanggal_lahir" value="<?= $pribadi != NULL ? $pribadi['tanggal_lahir'] : set_value('tanggal_lahir');   ?>" autocomplete="off">
+                                    <input type="date" class="form-control <?= (form_error('tanggal_lahir')) ? 'is-invalid' : '' ?>" id="tanggal_lahir" name="tanggal_lahir" value="<?= $pribadi != NULL ? $pribadi['tanggal_lahir'] : set_value('tanggal_lahir');   ?>" autocomplete="off">
                                     <?= form_error('tanggal_lahir', '<small class="form-text text-danger">', '</small>'); ?>
                                 </div>
                             </div>
