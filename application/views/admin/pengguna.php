@@ -27,8 +27,8 @@
                             <?php foreach ($pengguna as $item) : ?>
                                 <tr class="text-center">
                                     <td></td>
-                                    <td class="text-capitalize"><?= $item['nama_lengkap'] ?></td>
-                                    <td><?= $item['nip'] ?></td>
+                                    <td class="text-capitalize"><?= $item['nama_user'] ?></td>
+                                    <td><?= $item['nip_user'] ?></td>
                                     <td><?= $item['username'] ?></td>
                                     <td><?= $item['email'] ?></td>
                                     <td>

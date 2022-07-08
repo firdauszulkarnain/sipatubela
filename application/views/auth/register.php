@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Registration Page (v2)</title>
+    <title><?= $title ?>| APTUBELA</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -20,7 +20,9 @@
     <div class="register-box">
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="<?= base_url() ?>auth/register" class="h1"><b>SI</b>PtuBela</a>
+                <img src="<?= base_url() ?>assets/img/logo/bogor.png" alt="AdminLTE Logo" width="20%">
+                <br>
+                <a href="<?= base_url() ?>auth/register" class="h1"><b>AP</b>TuBela</a>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Register Akun</p>
@@ -81,7 +83,7 @@
                     </div>
                 </form>
                 <br>
-                <a href="<?= base_url() ?>auth/login" class="text-center">I already have a membership</a>
+                <p class="text-center">Sudah Memiliki Akun?<a href="<?= base_url() ?>auth/login" class="text-center"> Login</a></p>
             </div>
             <!-- /.form-box -->
         </div><!-- /.card -->

@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Log in (v2)</title>
-
+    <title><?= $title; ?> | APTUBELA</title>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
@@ -19,8 +18,10 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <a href="<?= base_url() ?>auth/login" class="h1"><b>SI</b>TuBela</a>
-                <p>Sistem Informasi Tugas Belajar</p>
+                <img src="<?= base_url() ?>assets/img/logo/bogor.png" alt="AdminLTE Logo" width="20%">
+                <br>
+                <a href="<?= base_url() ?>auth/login" class="h1"><b>AP</b>TuBela</a>
+                <p>Sistem Pengajuan Tugas Belajar</p>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Login Untuk Memulai Aktivitas</p>
@@ -51,7 +52,7 @@
                 </form>
 
                 <p class=" mt-3 text-center">
-                    <a href="<?= base_url() ?>auth/register" class="text-center">Register a new membership</a>
+                    <a href="<?= base_url() ?>auth/register" class="text-center">Register Akun</a>
                 </p>
             </div>
             <!-- /.card-body -->
