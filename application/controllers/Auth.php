@@ -17,6 +17,7 @@ class Auth extends CI_Controller
             $this->load->view('auth/login', $data);
         } else {
             $admin = $this->db->get_where('admin', ['username' => $this->input->post('username')])->row_array();
+            // cek yang login admin atau bukan
             if ($admin != NULL) {
                 $this->_login();
             } else {

@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class User extends CI_Controller
 {
-
+    // cek session login user
     public function __construct()
     {
         parent::__construct();
@@ -17,6 +17,7 @@ class User extends CI_Controller
     {
         redirect('user/dashboard');
     }
+
     public function dashboard()
     {
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
@@ -24,6 +25,7 @@ class User extends CI_Controller
         $this->template->load('template/user_template', 'user/dashboard', $data);
     }
 
+    //  profil user
     public function profile()
     {
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
