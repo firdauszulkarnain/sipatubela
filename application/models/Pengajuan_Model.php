@@ -80,4 +80,10 @@ class Pengajuan_Model extends CI_Model
         $this->db->join('data_pribadi dp', 'dp.user_id = us.id_user');
         return $this->db->get_where('pengajuan pj', ['pj.id_pengajuan' => $id_pengajuan])->row_array();
     }
+
+    // Ambil Lampiran
+    public function ambilLampiran($id_user)
+    {
+        return $this->db->get_where('pengajuan', ['user_id' => $id_user])->row_array();
+    }
 }

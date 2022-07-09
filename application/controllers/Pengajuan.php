@@ -68,8 +68,14 @@ class Pengajuan extends CI_Controller
     public function lampiran()
     {
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
+        $idUser = $data['user']['id_user'];
         $data['title'] = 'Lampiran Data Pengajuan';
-        $this->template->load('template/user_template', 'user/lampiran', $data);
+        $data['pengajuan'] = $this->Pengajuan_Model->ambilLampiran($idUser);
+        if ($data['pengajuan'] == NULL) {
+            $this->template->load('template/user_template', 'user/lampiran', $data);
+        } else {
+            $this->template->load('template/user_template', 'user/download_lampiran', $data);
+        }
     }
 
     public function proses_pengajuan()
