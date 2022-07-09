@@ -64,7 +64,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="<?= base_url() ?>admin/dashboard" class="brand-link">
+            <a href="<?= base_url() ?>user/dashboard" class="brand-link">
                 <img src="<?= base_url() ?>assets/img/logo/bogor.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text">APTUBELA</span>
             </a>
