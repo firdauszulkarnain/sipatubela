@@ -10,4 +10,15 @@ class Admin_Model extends CI_Model
         $this->db->where('id_user', $id_user);
         $this->db->delete('user');
     }
+
+    // Update status pengajuan
+    public function updateStatus($id_pengajuan)
+    {
+        $data = [
+            'status' => $this->input->post('status'),
+        ];
+
+        $this->db->where('id_pengajuan', $id_pengajuan);
+        $this->db->update('pengajuan', $data);
+    }
 }

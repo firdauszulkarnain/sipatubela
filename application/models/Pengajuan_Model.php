@@ -37,7 +37,7 @@ class Pengajuan_Model extends CI_Model
             'alamat' =>  htmlspecialchars(trim($this->input->post('alamat'))),
             'program_studi' =>  htmlspecialchars(trim($this->input->post('program_studi'))),
             'instusi' =>  htmlspecialchars(trim($this->input->post('instusi'))),
-            'user_id' => $idUser
+            'user_id' => $idUser,
         ];
 
         $this->db->where('user_id', $idUser);
@@ -59,6 +59,7 @@ class Pengajuan_Model extends CI_Model
             'st_rekomendasi' => $st_rekomendasi,
             'jadwal_kuliah' => $jadwal_kuliah,
             'st_pernyataan' => $st_pernyataan,
+            'status' => null,
 
         ];
 

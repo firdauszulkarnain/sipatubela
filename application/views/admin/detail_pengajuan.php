@@ -61,6 +61,28 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-header font-weight-bolder bg-danger">
+                    Status Pengajuan
+                </div>
+                <div class="card-body">
+                    <form action="" method="POST">
+                        <div class="form-group row">
+                            <label for="status" class="col-sm-4 col-form-label">Status Pengajuan</label>
+                            <div class="col-sm-6">
+                                <select class="form-control text-capitalize selectpicker <?= (form_error('status')) ? 'border border-danger' : 'border border-secondary' ?>" id="status" name="status" title="Pilih Status">
+                                    <option value="terima">Terima</option>
+                                    <option value="tolak">Tolak</option>
+                                </select>
+                                <?= form_error('status', '<small class="form-text text-danger">', '</small>'); ?>
+                            </div>
+                            <div class="col-lg-2">
+                                <button class="btn btn-block btn-primary" type="submit">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header font-weight-bolder bg-danger">
                     File Pengajuan Pengguna
                 </div>
                 <div class="card-body">

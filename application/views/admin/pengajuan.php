@@ -75,7 +75,15 @@
                                         <br>
                                         <input type="checkbox" id="st_pernyataan" checked disabled>
                                     </td>
-                                    <td></td>
+                                    <td class="text-center align-middle">
+                                        <?php if ($item['status'] == NULL) : ?>
+                                            <span class="badge badge-warning">Menunggu</span>
+                                        <?php elseif ($item['status'] == 'terima') : ?>
+                                            <span class="badge badge-success">Diterima</span>
+                                        <?php else : ?>
+                                            <span class="badge badge-success">Ditolak</span>
+                                        <?php endif ?>
+                                    </td>
                                     <td class="text-center align-middle">
                                         <!-- Button Detail -->
                                         <a href="<?= base_url() ?>pengguna/detail_pengajuan/<?= $item['id_pengajuan'] ?>" class="btn btn-sm btn-success text-light"><i class="fas fa-fw fa-eye"></i> </a>

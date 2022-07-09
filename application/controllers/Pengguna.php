@@ -35,7 +35,18 @@ class Pengguna extends CI_Controller
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('admin')])->row_array();
         $data['title'] = 'Detail Pengajuan';
         $data['pengajuan'] = $this->Pengajuan_Model->detailPengajuan($id_pengajuan);
-        $this->template->load('template/admin_template', 'admin/detail_pengajuan', $data);
+
+        // form validation status
+        $this->form_validation->set_rules('status', 'Status', 'required|trim', ['required' => 'Status Tidak Boleh Kosong']);
+
+        if ($this->form_validation->run() == false) {
+            $this->template->load('template/admin_template', 'admin/detail_pengajuan', $data);
+        } else {
+            // update status
+            $this->Admin_Model->updateStatus($id_pengajuan);
+            $this->session->set_flashdata('pesan', 'Berhasil Update Status Pengajuan!');
+            redirect('pengguna/pengajuan');
+        }
     }
 
     // update pengguna
