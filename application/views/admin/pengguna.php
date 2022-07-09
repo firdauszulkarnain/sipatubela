@@ -18,8 +18,8 @@
                                 <th width="5%">No</th>
                                 <th>Nama</th>
                                 <th>NIP</th>
-                                <th>Email</th>
                                 <th>Username</th>
+                                <th>Email</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
