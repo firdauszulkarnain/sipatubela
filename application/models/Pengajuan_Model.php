@@ -65,6 +65,12 @@ class Pengajuan_Model extends CI_Model
         $this->db->insert('pengajuan', $data);
     }
 
+    public function hapusPengajuan($id_pengajuan)
+    {
+        $this->db->where('id_pengajuan', $id_pengajuan);
+        $this->db->delete('pengajuan');
+    }
+
     // Ambil Data
     public function ambilData()
     {

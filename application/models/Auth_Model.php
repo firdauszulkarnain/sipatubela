@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth_Model extends CI_Model
 {
-
+    // Register akun
     public function register()
     {
         $data = [
@@ -15,6 +15,7 @@ class Auth_Model extends CI_Model
         $this->db->insert('user', $data);
     }
 
+    // update passwor admin
     public function update_password($admin_id)
     {
         $data = [

@@ -78,6 +78,14 @@ class Pengajuan extends CI_Controller
         }
     }
 
+    public function hapus_pengajuan($id_pengajuan)
+    {
+        $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();
+        $this->Pengajuan_Model->hapusPengajuan($id_pengajuan);
+        $this->session->set_flashdata('pesan', 'Berhasil Hapus Data Pengajuan!');
+        redirect('pengajuan/lampiran');
+    }
+
     public function proses_pengajuan()
     {
         $data['user'] = $this->db->get_where('user', ['username' => $this->session->userdata('user')])->row_array();

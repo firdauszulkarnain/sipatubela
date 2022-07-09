@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class User_Model extends CI_Model
 {
+    // update profil
     public function updateProfil($idUser)
     {
         $data = [
@@ -20,6 +21,7 @@ class User_Model extends CI_Model
         $this->db->update('user', $data);
     }
 
+    // update data pengguna
     public function updatePengguna($idUser)
     {
         $data = [

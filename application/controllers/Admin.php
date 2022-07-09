@@ -12,6 +12,7 @@ class Admin extends CI_Controller
             redirect('auth/login');
         }
     }
+    // index redirect ke dashboard
     public function index()
     {
         redirect('admin/dashboard');
@@ -24,6 +25,7 @@ class Admin extends CI_Controller
         $this->template->load('template/admin_template', 'admin/dashboard', $data);
     }
 
+    // admin profile
     public function profile()
     {
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('admin')])->row_array();
@@ -36,6 +38,8 @@ class Admin extends CI_Controller
         $data['admin'] = $this->db->get_where('admin', ['username' => $this->session->userdata('admin')])->row_array();
         $admin_id = $data['admin']['id_admin'];
         $admin_password = $data['admin']['password'];
+
+        // form validation
         $this->form_validation->set_rules(
             'old_password',
             'Password',
@@ -61,6 +65,7 @@ class Admin extends CI_Controller
         if ($this->form_validation->run() == false) {
             redirect('admin/profile');
         } else {
+            // cek password
             if (password_verify($password, $admin_password)) {
                 $this->Auth_Model->update_password($admin_id);
                 $this->session->set_flashdata('pesan', 'Update Password');

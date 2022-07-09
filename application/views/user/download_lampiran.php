@@ -72,7 +72,7 @@
                             <a href="<?= base_url(''); ?>assets/file/<?= $pengajuan['st_pernyataan'] ?>" class="btn btn-block font-weight-bolder text-light bg-primary" target="_blank"> Download File</a>
                         </div>
                     </div>
-                    <button class="btn btn-danger px-5 float-right mb-4 mt-3" type="button">Upload Ulang Lampiran</button>
+                    <a class="btn btn-danger px-5 float-right mb-4 mt-3" href="<?= base_url() ?>pengajuan/hapus_pengajuan/<?= $pengajuan['id_pengajuan'] ?>">Upload Ulang Lampiran</a>
                 </div>
             </div>
         </div>
